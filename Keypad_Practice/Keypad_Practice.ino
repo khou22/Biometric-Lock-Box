@@ -22,7 +22,7 @@ byte rowPins[ROWS] = {5, 6, 7, 8}; //connect to the row pinouts of the keypad
 byte colPins[COLS] = {2, 3, 4}; //connect to the column pinouts of the keypad
 
 // Create the Keypad
-Keypad kpd = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS );
+Keypad kpd = Keypad(makeKeymap(keys), rowPins, colPins, ROWS, COLS);
 
 // Password
 String masterPassword = "1234"; // Password
