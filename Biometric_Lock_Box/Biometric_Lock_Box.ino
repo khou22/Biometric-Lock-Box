@@ -86,6 +86,7 @@ void loop() {
       }
     }
   } else {
+    Serial.println("Waiting...");
     // Fingerprint password
     getFingerprintIDez();
   }
@@ -183,6 +184,7 @@ uint8_t getFingerprintID() {
 }
 
 int getFingerprintIDez() {
+  Serial.println("Reading fingerprint");
   uint8_t p = finger.getImage();
   if (p != FINGERPRINT_OK)  return -1;
 

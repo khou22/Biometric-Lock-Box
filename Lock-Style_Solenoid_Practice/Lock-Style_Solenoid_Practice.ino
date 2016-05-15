@@ -4,12 +4,16 @@
 // https://learn.adafruit.com/secret-knock-activated-drawer-lock/wiring
 // https://makenoisemakemusic.wordpress.com/tag/diy/
 
-const int solenoidPin = 13;
-int delayTime = 5000;
+const int solenoidPin = 10;
+int delayTime = 500;
 
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
+  while (!Serial) {
+    ; // wait for s erial port to connect. Needed for Leonardo
+  }
+  Serial.println(solenoidPin);
   pinMode(solenoidPin, OUTPUT);
 }
 
@@ -26,4 +30,5 @@ void unlockSolenoid() {
   digitalWrite(solenoidPin, LOW);
   Serial.println("Locking");
 }
+
 
